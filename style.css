@@ -402,7 +402,7 @@ img {
   color: var(--clr-primary);
 }
 
-/* MOBLIE | HOME CATALOG */
+/* MOBILE RESPONSIVE | HOME CATALOG */
 @media screen and (max-width: 520px) {
   .homeCatalog__title h2::after {
     display: none;
@@ -443,6 +443,10 @@ img {
   background-color: var(--clr-dark);
   padding: 3rem 0;
   color: var(--clr-light);
+  /* position: fixed; */
+  width: 100%;
+  /* bottom: 0; */
+  /* z-index: 9999; */
 }
 .footer__wrapper {
   display: flex;
@@ -470,8 +474,19 @@ img {
   .footer__wrapper {
     flex-direction: column;
   }
+  .footer__social a {
+    color: var(--clr-light);
+  }
+
+  .footer__social a:hover {
+    color: var(--clr-primary);
+  }
 }
 /* ABOUT PAGE */
+
+/* .aboutBanner {
+  height: 100vh;
+} */
 .aboutBanner__wrapper {
   display: flex;
   padding-top: 13rem;
@@ -549,6 +564,38 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
 }
 
+/* MOBILE RESPONSIVE | ABOUT PAGE */
+
+@media screen and (max-width: 520px) {
+  .aboutBanner__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aboutBanner__img p::before {
+    width: 25rem;
+  }
+  .aboutBanner__text h1 {
+  font-size: var(--h2);
+  letter-spacing: 1rem;
+  }
+
+  .aboutBanner__img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .aboutBanner__img img {
+    height: 50rem;
+  }
+
+  .aboutStyle {
+    padding: 4rem 0rem;
+  }
+}
+
 /* CATALOG PAGE BANNER */
 .catalogBanner {
   background: linear-gradient(
@@ -623,7 +670,7 @@ img {
   left: -455rem;
   z-index: -1;
 }
-.card2:nth-child(2) .card2--text::before {
+.card2:nth-child(even) .card2--text::before {
   content: " ";
   position: absolute;
   background-color: var(--clr-secondary);
@@ -635,11 +682,13 @@ img {
 
 .card2 img {
   position: relative;
-  padding: 5rem 0;
+  padding: 4rem 0;
   width: 50%;
+  height: 40rem;
+  object-fit: cover;
 }
 
-.catalogPackage__wrapper .card2:nth-child(2) {
+.catalogPackage__wrapper .card2:nth-child(even) {
   display: flex;
   flex-direction: row-reverse;
 }
@@ -648,11 +697,64 @@ img {
   width: 50%;
 }
 
+/* MOBILE RESPONSIVE | CATALOG PAGE */
+@media screen and (max-width: 520px) {
+  .catalogPackage__title {
+    margin-bottom: 2rem;
+  }
+  .card2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .card2--text::before {
+    width: 500rem;
+    height: 47%;
+    left: -469.5rem;
+
+  }
+
+  .card2 img {
+    width: 80%;
+    height: 25rem;
+    object-fit: cover;
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .card2--text {
+    width: 80%;
+    margin: 3rem 0;
+  }
+
+  .catalogPackage__wrapper .card2:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0;
+  }
+
+    .catalogPackage__wrapper .card2:nth-child(even) h4{
+    text-align: end;
+  } 
+
+  .card2:nth-child(even) .card2--text::before {
+    left: 15rem;
+    height: 47%;
+    width: 37rem;
+
+  }
+}
+
 /* CONTACT PAGE */
 
 .contactBanner {
-  padding-top: 13rem;
   background-color: var(--clr-tertiary);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contactBanner__title h1 {
@@ -665,31 +767,44 @@ img {
 .contactBanner__wrapper {
   display: flex;
   justify-content: space-around;
-  gap: 10rem;
+  gap: 5rem;
 }
-input {
+.contactBanner input {
   border: none;
   border-bottom: 0.2px solid var(--clr-dark);
   display: flex;
-  width: 85rem;
+  width: 75rem;
   padding: 2rem 1.5rem 1rem 1.5rem;
   background-color: transparent;
   font-family: var(--font-style);
+  font-size: var(--h4);
 }
 
-textarea {
+.contactBanner textarea {
   padding: 2rem 1.5rem 1rem 1.5rem;
   border: none;
   border-bottom: 0.2px solid var(--clr-dark);
-  display: flex;
-  width: 85rem;
+  /* display: flex; */
+  width: 75rem;
   background-color: transparent;
   font-family: var(--font-style);
+  font-size: var(--h4);
+}
+.contactBanner form a {
+  display: block;
 }
 
-.contactBanner__form {
-  font-size: var(--h1);
-  padding-bottom: 5rem;
+.contactBanner__info {
+  background-color: var(--clr-dark);
+  width: 50rem;
+  /* padding: auto 10rem;
+  margin-bottom: 10rem; */
+  padding: 0 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  /* z-index: -1; */
 }
 
 .contactBanner__info h2 {
@@ -697,14 +812,45 @@ textarea {
   font-size: var(--h3);
   text-align: center;
 }
-.contactBanner__info {
-  background-color: var(--clr-dark);
-  padding: 5rem 10rem;
-  margin-bottom: 10rem;
+
+.contactBanner__info i {
+  margin-right: 1rem;
+  color: var(--clr-secondary);
 }
+
 .contactBanner__info a {
   color: var(--clr-tertiary);
   line-height: 3rem;
+}
+
+/* MOBILE RESPONSIVE | CONTACT PAGE */
+@media screen and (max-width: 520px) {
+  .contactBanner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contactBanner__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contactBanner input {
+    width: 40rem;
+  }
+
+  .contactBanner textarea {
+    width: 40rem;
+  }
+
+  .contactBanner__info {
+    width: 40rem;
+    padding: 3rem 10rem;
+  }
+
+  .contactBanner form a {
+    width: 40rem;
+  }
 }
 
 /* ASSETS */
@@ -746,13 +892,12 @@ textarea {
 .btn.bg-dark {
   margin-top: 2rem;
   background-color: var(--clr-dark);
-  color: var(--clr-dark);
   font-weight: 700;
   color: var(--clr-light);
   font-size: var(--h4);
   letter-spacing: 1rem;
   text-align: center;
-  padding: 0;
+  padding: 0.5rem 0;
   /* margin-bottom: 15rem; */
 }
 
