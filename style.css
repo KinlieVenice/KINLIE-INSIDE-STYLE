@@ -561,7 +561,7 @@ img {
 .aboutStyle__wrapper {
   display: grid;
   gap: 4rem;
-  grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* MOBILE RESPONSIVE | ABOUT PAGE */
@@ -754,7 +754,7 @@ img {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 15rem 0;
 }
 
 .contactBanner__title h1 {
@@ -826,6 +826,7 @@ img {
 /* MOBILE RESPONSIVE | CONTACT PAGE */
 @media screen and (max-width: 520px) {
   .contactBanner {
+    padding: 50rem 0;
     display: flex;
     flex-direction: column;
   }
@@ -859,6 +860,11 @@ img {
   background-color: var(--clr-light);
   max-width: 43rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
 }
 
 .card img {
